@@ -1,49 +1,8 @@
 import random
-#Anthony Varela, 2026
-"""
-print("hello world");
-
-list = [1,2,3,4,5];
-
-for i in list:
-    print(i);
-
-    sum = 0
-for i in range(1,6,1):
-    print(i)
-    sum += i
-print("sum is: ", sum)
-
-limit = 6
-start = 1
-sh = 0
-while start < limit:
-    print(start)
-    sh += start
-    start += 1
-
-print("sh is: ", sh)
-
-liss = []
-
-for i in range(1,6):
-    print(i)
-    liss.append(i)
-print(liss)
-
-nums = range(1,6) would work too
-range(start inclusive, end exclusive, increment value)
-
-for i in range(5): swap range with nums
-    print("number " + str( i + 1), end=' ');
-
-init = 0
-
-while init < length:
-    print(init, end=' ') used to print a series of things on the same line
-    init += 1
-
-"""
+import string
+## Anthony Varela, 2026
+## Personal project. This is my first python project.
+## This password generator performs the function of providing strong passwords to users.
 
 ##We ask the user to provide the parameters for generating the password
 while True: ##infinite loop until we break out of it
@@ -55,31 +14,53 @@ while True: ##infinite loop until we break out of it
 print("Desired password length: " , length)
 
 while True: 
-    bol1 = str(input("Uppercases in it: (y/n): "))
-    if bol1 == "y" or bol1 == "n": 
+    upper = str(input("Uppercases in it: (y/n): "))
+    if upper == "y" or upper == "n": 
         break 
     print("(y/n)")
 
 while True: 
-    bol2 = str(input("Lowercases in it: (y/n): "))
-    if bol2 == "y" or bol2 == "n": 
+    lower = str(input("Lowercases in it: (y/n): "))
+    if lower == "y" or lower == "n": 
         break 
     print("(y/n)")
 
 while True: 
-    bol3 = str(input("Numbers in it: (y/n): "))
-    if bol3 == "y" or bol3 == "n": 
+    num = str(input("Numbers in it: (y/n): "))
+    if num == "y" or num == "n": 
         break 
     print("(y/n)")    
 
 while True: 
-    bol4 = str(input("Special characters in it: (y/n): "))
-    if bol4 == "y" or bol4 == "n": 
+    chars = str(input("Special characters in it: (y/n): "))
+    if chars == "y" or chars == "n": 
         break 
     print("(y/n)")
+
+uppercaseLetters = list(string.ascii_uppercase) ##Array of all the uppercase letters 
+lowercaseLetters = list(string.ascii_lowercase) ##lowercase letters
+numbers = list(string.digits) ##numbers
+specialCharacters = list(string.punctuation) #special characters
+
+lochars = []
+
+if upper == "y":
+ lochars.append(uppercaseLetters)
+
+if lower == "y":
+ lochars.append(lowercaseLetters)
+
+if num == "y":
+ lochars.append(numbers)
+
+if chars == "y":
+ lochars.append(specialCharacters)
+    
 
 #Function that generates the password
 def ppskGenerator():
     print("Generating password...")
 
 ppskGenerator()
+
+print(lochars)
