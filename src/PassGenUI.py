@@ -59,7 +59,7 @@ def clear():
 window = tk.Tk()
 window.title("PassGen")
 window.geometry("600x400")
-window.iconbitmap("C:/Users/antho/Downloads/PassGenIcon.ico")
+window.iconbitmap("lib/PassGenIcon.ico")
 window.configure(bg="#1d3354")
 #########################################################################
 
