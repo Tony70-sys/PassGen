@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
 from PassGen import addParameters, generatePassword
+from pathlib import Path
+import sys
+
 
 ## Anthony Varela, 2026
 ## Personal project and my first Python project.
@@ -59,7 +62,14 @@ def clear():
 window = tk.Tk()
 window.title("PassGen")
 window.geometry("600x400")
-window.iconbitmap("lib/PassGenIcon.ico")
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys._MEIPASS)
+else:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+icon_path = BASE_DIR / "lib" / "PassGenIcon.ico"
+
+window.iconbitmap(str(icon_path))
 window.configure(bg="#1d3354")
 #########################################################################
 
