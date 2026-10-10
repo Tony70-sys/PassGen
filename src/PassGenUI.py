@@ -68,7 +68,6 @@ else:
     BASE_DIR = Path(__file__).resolve().parent.parent
 
 icon_path = BASE_DIR / "lib" / "PassGenIcon.ico"
-
 window.iconbitmap(str(icon_path))
 window.configure(bg="#1d3354")
 #########################################################################
